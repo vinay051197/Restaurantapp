@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 6,
+      "name": "vinay ",
+      "email": "vinay@gmail.com",
+      "mobile": 8005521346,
+      "address": "Noida",
+      "services": "Chai"
+    },
+    {
+      "id": 7,
+      "name": "Gajebo",
+      "email": "gajebo@gmail.com",
+      "mobile": 8005520812,
+      "address": "Noida",
+      "services": "Chai"
+    }
+  ],
+  "signup": [
+    {
+      "name": "Vinay",
+      "email": "vinay@gmail.com",
+      "mobile": 8005520812,
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "name": "Parth",
+      "email": "parth@gmail.com",
+      "mobile": 8005520812,
+      "password": "789456",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

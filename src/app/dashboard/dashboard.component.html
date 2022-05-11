@@ -1,0 +1,95 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h2>Restaurant Management Application</h2>
+        <div class="d-flex">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Restaurant</button>
+            <button routerLink="/login" class="btn btn-danger mx-3">Log Out</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Making a Jumbotron -->
+
+<div class="p-5 mb-4 bg-light rounded-3">
+   <div class="container-fluid py-5">
+       <h1 class="display-5 fw-bold">Restaurant Record Management</h1>
+       <p class="col-md-8 fs-4">This is a simple application to save and manage your Restaurants</p>
+       <a class="btn btn-info btn-lg" target="_blank" href="https://www.google.com" type="button">Vinay</a>
+   </div>
+  </div>
+
+<!-- Making Table -->
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Restaurant ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Emaik ID</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Address</th>
+            <th scope="col">Services</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allData">
+            
+            <td>{{data.id}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.services}}</td>
+            
+            <td>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editResto(data)">Edit</button>&nbsp; 
+                <button (click)="deleteResto(data)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Restaurant Form</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"  placeholder="Enter Restaurant Name">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email ID</label>
+                  <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter Restaurant Mail ID">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Mobile</label>
+                  <input type="number" formControlName="mobile" class="form-control" id="exampleInputEmail1"  placeholder="Enter Mobile Number">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Address</label>
+                  <input type="text" formControlName="address" class="form-control" id="exampleInputEmail1"  placeholder="Enter Restaurant Address">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Services</label>
+                  <input type="text" formControlName="services" class="form-control" id="exampleInputEmail1"  placeholder="Enter services provided by Restaurant">
+                </div>
+                
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="addRestaurant()">Add Details</button>
+          <button type="button" class="btn btn-primary" (click)="updateRestaurant()">Update Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
